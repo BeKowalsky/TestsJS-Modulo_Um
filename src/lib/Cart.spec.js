@@ -4,7 +4,6 @@ describe('Cart', () => {
   let cart;
 
   beforeEach(() => {
-    //Antes de cada teste
     cart = new Cart();
   });
 
@@ -16,9 +15,9 @@ describe('Cart', () => {
     const item = {
       product: {
         title: 'Adidas running shoes - men',
-        price: 35388, //353.88 | R$ 353,88
+        price: 35388,
       },
-      quantity: 2, //70776
+      quantity: 2,
     };
 
     cart.add(item);
