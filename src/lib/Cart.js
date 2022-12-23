@@ -8,8 +8,7 @@ export default class Cart {
     const itemToFind = { product: item.product };
 
     if (find(this.items, itemToFind)) {
-      //Retorna o primeiro item que corresponde ao valor, nesse caso primeira chamada da classe vai criar o item, então não cai no find, já a segunda vai ser existente, então cai nesse if;
-      remove(this.items, itemToFind); // Remove o item que retornou no find;
+      remove(this.items, itemToFind);
     }
 
     this.items.push(item);

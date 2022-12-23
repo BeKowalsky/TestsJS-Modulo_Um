@@ -27,7 +27,6 @@ describe('Cart', () => {
   });
 
   it('should ensure no more than on product exists at a time', () => {
-    //fit faz com que rode apenas esse teste, ele pula os outros
     cart.add({
       product,
       quantity: 2,
