@@ -14,6 +14,10 @@ export default class Cart {
     this.items.push(item);
   }
 
+  remove(product) {
+    remove(this.items, { product });
+  }
+
   getTotal() {
     return this.items.reduce((acumulator, item) => {
       return acumulator + item.quantity * item.product.price;
