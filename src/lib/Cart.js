@@ -23,4 +23,11 @@ export default class Cart {
       return acumulator + item.quantity * item.product.price;
     }, 0);
   }
+
+  checkout() {
+    return {
+      total: this.getTotal(),
+      items: this.items,
+    };
+  }
 }
