@@ -2,10 +2,10 @@ import find from 'lodash/find';
 import remove from 'lodash/remove';
 import Dinero from 'dinero.js';
 
-const Money = Dinero; //Atribui todos os valores de 'Dinero' para 'Money', serve para na hora de usar, ao invés de colocar 'Dinero', coloca 'Money'
+const Money = Dinero;
 
-Money.defaultCurrency = 'BRL'; // Padrão em reais
-Money.defaultPrecision = 2; // Até 2 casas após vírgula
+Money.defaultCurrency = 'BRL';
+Money.defaultPrecision = 2;
 
 export default class Cart {
   items = [];
@@ -27,10 +27,9 @@ export default class Cart {
   getTotal() {
     return this.items.reduce((acumulator, item) => {
       return acumulator.add(
-        //Acumulator agora usa o add para fazer o cálculo ao passar pelos itens do array
         Money({ amount: item.quantity * item.product.price }),
       );
-    }, Money({ amount: 0 })); // Mudou de 0 para R$0.0
+    }, Money({ amount: 0 }));
   }
 
   summary() {

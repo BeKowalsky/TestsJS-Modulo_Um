@@ -19,7 +19,7 @@ describe('Cart', () => {
 
   describe('getTotal()', () => {
     it('should return 0 when getTotal() is executed in a newly created instance', () => {
-      expect(cart.getTotal().getAmount()).toEqual(0); //Pega apenas o valor de 'amount' do Money usando em Cart.js;
+      expect(cart.getTotal().getAmount()).toEqual(0);
     });
 
     it('should multiply quantity and price and receive the total amount', () => {
