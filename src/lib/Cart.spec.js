@@ -91,7 +91,7 @@ describe('Cart', () => {
       });
 
       expect(cart.summary()).toMatchSnapshot();
-      expect(cart.getTotal()).toBeGreaterThan(0); //Maior que 0
+      expect(cart.getTotal()).toBeGreaterThan(0);
     });
 
     it('should reset the cart when checkout() is called', () => {
