@@ -26,18 +26,19 @@ export default class Cart {
 
   getTotal() {
     return this.items.reduce((acumulator, item) => {
-      const amount = Money({ amount: item.quantity * item.product.price });
-      let discount = Money({ amount: 0 });
+      const amount = Money({ amount: item.quantity * item.product.price }); // Valor total
+      let discount = Money({ amount: 0 }); // Desconto começa em 0
 
       if (
         item.condition &&
         item.condition.percentage &&
         item.quantity > item.condition.minimum
       ) {
-        discount = amount.percentage(item.condition.percentage);
+        // Verifica se tem condição de desconto
+        discount = amount.percentage(item.condition.percentage); // Valor da variável discount agora é o valor do desconto, transformado em porcentagem pela biblioteca
       }
 
-      return acumulator.add(amount).subtract(discount);
+      return acumulator.add(amount).subtract(discount); // Calcula o valor final e subtrai a porcentagem do desconto
     }, Money({ amount: 0 }));
   }
 
