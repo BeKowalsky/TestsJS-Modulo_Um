@@ -20,15 +20,15 @@ const calculateQuantityDiscount = (amount, item) => {
 };
 
 const calculateDiscount = (amount, quantity, condition) => {
-  const list = Array.isArray(condition) ? condition : [condition]; // Se for um array de condições, ele retorna o próprio, se não, ele transforma em array.
+  const list = Array.isArray(condition) ? condition : [condition];
 
-  const [higherDiscount] = list // [higherDiscount] -> extrai o maior;
+  const [higherDiscount] = list
     .map(cond => {
       if (cond.percentage) {
         return calculatePercentageDiscount(amount, {
           condition: cond,
           quantity,
-        }).getAmount(); //Retorna um objeto, usamos getAmount() para pegar somente o valor;
+        }).getAmount();
       } else if (cond.quantity) {
         return calculateQuantityDiscount(amount, {
           condition: cond,
@@ -36,7 +36,7 @@ const calculateDiscount = (amount, quantity, condition) => {
         }).getAmount();
       }
     })
-    .sort((a, b) => b - a); // ordena do maior para o menor
+    .sort((a, b) => b - a);
 
   return Money({ amount: higherDiscount });
 };
