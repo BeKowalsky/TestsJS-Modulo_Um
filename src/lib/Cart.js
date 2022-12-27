@@ -8,7 +8,7 @@ const calculatePercentageDiscount = (amount, item) => {
   }
 
   return Money({ amount: 0 });
-}; // Ou ele retorna o percentual calculado sobre o valor atual, se cair no if, ou retorna 0;
+};
 
 const calculateQuantityDiscount = (amount, item) => {
   if (item.quantity > item.condition.quantity) {
@@ -16,7 +16,7 @@ const calculateQuantityDiscount = (amount, item) => {
   }
 
   return Money({ amount: 0 });
-}; // Ou ele retorna o percentual calculado sobre o valor atual, se cair no if, ou retorna 0;
+};
 
 const Money = Dinero;
 
