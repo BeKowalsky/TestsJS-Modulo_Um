@@ -94,6 +94,20 @@ describe('Cart', () => {
       expect(cart.getTotal().getAmount()).toBeGreaterThan(0);
     });
 
+    it('should include formatted amount in the summary', () => {
+      cart.add({
+        product,
+        quantity: 5,
+      });
+
+      cart.add({
+        product: product2,
+        quantity: 3,
+      });
+
+      expect(cart.summary().formatted).toEqual('R$3,025.56');
+    });
+
     it('should reset the cart when checkout() is called', () => {
       cart.add({
         product: product2,
