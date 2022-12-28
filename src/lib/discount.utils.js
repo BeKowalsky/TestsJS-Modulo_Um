@@ -33,7 +33,7 @@ export const calculateDiscount = (amount, quantity, condition) => {
           condition: cond,
           quantity,
         }).getAmount();
-      } else {
+      } else if (cond.quantity) {
         return calculateQuantityDiscount(amount, {
           condition: cond,
           quantity,
